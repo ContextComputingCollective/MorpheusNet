@@ -1,6 +1,5 @@
 # MorpheusNet
-
-Hamiltonian Simulations of Sublime Kind
+The qDRIFT (quantum stochastic drift) algorithm is a randomized Hamiltonian simulation technique that approximates time evolution under a Hamiltonian by sampling Pauli terms according to their coefficient magnitudes.
 
 ## qDRIFT OpenQASM 3 simulation
 
