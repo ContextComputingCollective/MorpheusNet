@@ -1,0 +1,64 @@
+{
+  "provider": "IBM Quantum / Qiskit",
+  "simulator": "qiskit-aer AerSimulator",
+  "qasm_source": "/Users/gokulalex/Code/CC/MorpheusNet/circuits/qdrift_randomized_hamiltonian.qasm",
+  "shots": 4096,
+  "seed": 7331,
+  "versions": {
+    "qiskit": "2.5.0",
+    "qiskit-aer": "0.17.2",
+    "qiskit-qasm3-import": "0.6.0"
+  },
+  "source_circuit": {
+    "qubits": 3,
+    "classical_bits": 0,
+    "depth": 30,
+    "operations": {
+      "h": 16,
+      "cx": 12,
+      "rz": 6,
+      "sdg": 4,
+      "s": 4
+    }
+  },
+  "compiled_circuit": {
+    "backend": "aer_simulator_statevector",
+    "depth": 8,
+    "operations": {
+      "u3": 2,
+      "rzz": 2,
+      "u2": 2,
+      "unitary": 2
+    },
+    "qasm3_output": "/Users/gokulalex/Code/CC/MorpheusNet/outputs/qdrift_ibm_aer_transpiled.qasm"
+  },
+  "statevector_job_circuit": {
+    "backend": "aer_simulator_statevector",
+    "depth": 8,
+    "operations": {
+      "u3": 2,
+      "rzz": 2,
+      "u2": 2,
+      "unitary": 2,
+      "save_statevector": 1
+    }
+  },
+  "compiled_measurement_circuit": {
+    "backend": "aer_simulator",
+    "depth": 9,
+    "operations": {
+      "measure": 3,
+      "u3": 2,
+      "rzz": 2,
+      "u2": 2,
+      "unitary": 2,
+      "barrier": 1
+    }
+  },
+  "statevector_probabilities": {
+    "000": 1.0
+  },
+  "measurement_counts": {
+    "000": 4096
+  }
+}
