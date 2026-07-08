@@ -4,9 +4,9 @@ Hamiltonian Simulations of Sublime Kind
 
 ## qDRIFT OpenQASM 3 simulation
 
-This checkout includes the provided qDRIFT randomized Hamiltonian simulation as
-OpenQASM 3.0 and a runner that compiles it with IBM Qiskit, transpiles it for
-Qiskit Aer, and submits it to the local Aer simulator.
+This checkout includes qDRIFT randomized Hamiltonian simulations as OpenQASM
+3.0 and a runner that compiles them with IBM Qiskit, transpiles them for Qiskit
+Aer, and submits them to the local Aer simulator.
 
 ```bash
 /Users/gokulalex/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m venv .venv
@@ -23,3 +23,15 @@ The default run writes:
 - `outputs/qdrift_ibm_aer_result.json` with the source circuit metrics,
   compiled simulator circuit metrics, statevector probabilities, and sampled
   shot counts.
+
+### Bravyi-Kitaev mapped qDRIFT run
+
+`circuits/qdrift_bravyi_kitaev_h2.qasm` contains a four-qubit qDRIFT trajectory
+for a Bravyi-Kitaev mapped active-space Hamiltonian. Run it with:
+
+```bash
+python scripts/run_qdrift_ibm_aer.py \
+  --qasm circuits/qdrift_bravyi_kitaev_h2.qasm \
+  --output outputs/qdrift_bravyi_kitaev_ibm_aer_result.json \
+  --compiled-qasm outputs/qdrift_bravyi_kitaev_ibm_aer_transpiled.qasm
+```
