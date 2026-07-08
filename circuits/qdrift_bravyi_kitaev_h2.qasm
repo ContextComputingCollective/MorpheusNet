@@ -30,16 +30,23 @@
 OPENQASM 3.0;
 include "stdgates.inc";
 
+// Custom gates for different Pauli product evolutions
+// Single-qubit Z rotation
 gate pauli_z(theta) a {
   rz(theta) a;
 }
 
+// Two-qubit ZZ interaction
 gate pauli_zz(theta) a, b {
   cx a, b;
   rz(theta) b;
   cx a, b;
 }
 
+// Four-qubit XYYX interaction
+// Transforms basis using Hadamard and S-dagger gates
+// Applies controlled-Z rotations through CNOT ladder
+// Returns to original basis
 gate pauli_xyyx(theta) a, b, c, d {
   h a;
   sdg b;
@@ -62,6 +69,8 @@ gate pauli_xyyx(theta) a, b, c, d {
   h d;
 }
 
+// Four-qubit YXXY interaction
+// Y-basis transformations
 gate pauli_yxxy(theta) a, b, c, d {
   sdg a;
   h a;
@@ -84,6 +93,8 @@ gate pauli_yxxy(theta) a, b, c, d {
   s d;
 }
 
+// Four-qubit YYXX interaction
+// Combination of S-dagger and Hadamard gates
 gate pauli_yyxx(theta) a, b, c, d {
   sdg a;
   h a;
@@ -109,6 +120,7 @@ gate pauli_yyxx(theta) a, b, c, d {
 qubit[4] q;
 
 // Bravyi-Kitaev encoded Hartree-Fock seed state |1100>.
+// This prepares the Hartree-Fock state in the BK encoding
 x q[0];
 x q[1];
 
